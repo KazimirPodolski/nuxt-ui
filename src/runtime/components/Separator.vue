@@ -62,7 +62,7 @@ import { useAppConfig } from '#imports'
 import { useComponentProps } from '../composables/useComponentProps'
 import { useForwardProps } from '../composables/useForwardProps'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UAvatar from './Avatar.vue'
 
 const _props = withDefaults(defineProps<SeparatorProps>(), {

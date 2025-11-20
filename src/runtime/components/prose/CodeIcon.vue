@@ -16,7 +16,7 @@ export interface ProseCodeIconProps {
 import { computed } from 'vue'
 import { defu } from 'defu'
 import { useAppConfig } from '#imports'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 const props = defineProps<ProseCodeIconProps>()
 

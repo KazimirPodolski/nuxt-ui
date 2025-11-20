@@ -118,7 +118,7 @@ import { useComponentProps } from '../composables/useComponentProps'
 import { tv } from '../utils/tv'
 import UBadge from './Badge.vue'
 import UButton from './Button.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 defineOptions({ inheritAttrs: false })
 

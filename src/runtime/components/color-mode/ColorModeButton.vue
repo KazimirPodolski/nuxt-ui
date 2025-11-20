@@ -22,7 +22,7 @@ import { useForwardProps } from '../../composables/useForwardProps'
 import { useLocale } from '../../composables/useLocale'
 import { usePrefix } from '../../composables/usePrefix'
 import UButton from '../Button.vue'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 defineOptions({ inheritAttrs: false })
 

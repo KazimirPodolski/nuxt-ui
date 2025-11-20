@@ -17,7 +17,7 @@ import { computed } from 'vue'
 import { useAppConfig } from '#imports'
 import { useComponentProps } from '../../composables/useComponentProps'
 import { tv } from '../../utils/tv'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 const _props = defineProps<ProseIconProps>()
 

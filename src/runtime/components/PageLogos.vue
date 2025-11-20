@@ -39,7 +39,7 @@ import { useComponentProps } from '../composables/useComponentProps'
 import { tv } from '../utils/tv'
 import UMarquee from './Marquee.vue'
 import UAvatar from './Avatar.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 defineOptions({ inheritAttrs: false })
 

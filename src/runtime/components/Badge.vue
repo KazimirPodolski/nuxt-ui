@@ -48,7 +48,7 @@ import { useFieldGroup } from '../composables/useFieldGroup'
 import { useComponentIcons } from '../composables/useComponentIcons'
 import { useComponentProps } from '../composables/useComponentProps'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UAvatar from './Avatar.vue'
 
 const _props = withDefaults(defineProps<BadgeProps>(), {

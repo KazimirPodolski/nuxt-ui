@@ -57,7 +57,7 @@ import { useComponentProps } from '../composables/useComponentProps'
 import { useDashboard } from '../utils/dashboard'
 import { tv } from '../utils/tv'
 import UDashboardSidebarToggle from './DashboardSidebarToggle.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 defineOptions({ inheritAttrs: false })
 

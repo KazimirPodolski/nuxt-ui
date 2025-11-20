@@ -86,7 +86,7 @@ import { useComponentProps } from '../composables/useComponentProps'
 import { useForwardProps } from '../composables/useForwardProps'
 import { tv } from '../utils/tv'
 import { get } from '../utils'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 const _props = withDefaults(defineProps<StepperProps<T>>(), {
   orientation: 'horizontal',

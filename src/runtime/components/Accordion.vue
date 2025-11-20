@@ -85,7 +85,7 @@ import { useAppConfig } from '#imports'
 import { useComponentProps } from '../composables/useComponentProps'
 import { get } from '../utils'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 const _props = withDefaults(defineProps<AccordionProps<T>>(), {
   type: 'single',

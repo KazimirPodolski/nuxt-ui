@@ -56,7 +56,7 @@ import { pickLinkProps } from '../utils/link'
 import { tv } from '../utils/tv'
 import ULink from './Link.vue'
 import ULinkBase from './LinkBase.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 const _props = withDefaults(defineProps<FooterColumnsProps<T>>(), {
   as: 'nav'

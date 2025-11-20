@@ -72,7 +72,7 @@ import { usePrefix } from '../composables/usePrefix'
 import { tv } from '../utils/tv'
 import UPageFeature from './PageFeature.vue'
 import UContainer from './Container.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UButton from './Button.vue'
 
 const _props = withDefaults(defineProps<PageSectionProps>(), {

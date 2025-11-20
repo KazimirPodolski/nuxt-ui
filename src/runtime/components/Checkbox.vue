@@ -71,7 +71,7 @@ import { useComponentProps } from '../composables/useComponentProps'
 import { useForwardProps } from '../composables/useForwardProps'
 import { useFormField } from '../composables/useFormField'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 defineOptions({ inheritAttrs: false })
 

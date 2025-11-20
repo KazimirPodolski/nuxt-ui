@@ -68,7 +68,7 @@ import { useAppConfig } from '#imports'
 import { useComponentProps } from '../composables/useComponentProps'
 import { useFormField } from '../composables/useFormField'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 defineOptions({ inheritAttrs: false })
 
