@@ -20,7 +20,7 @@ export interface ProseH3Slots {
 import { computed } from 'vue'
 import { useRuntimeConfig, useAppConfig } from '#imports'
 import { tv } from '../../utils/tv'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 const props = defineProps<ProseH3Props>()
 defineSlots<ProseH3Slots>()

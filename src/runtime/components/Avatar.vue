@@ -43,7 +43,7 @@ import { useAppConfig } from '#imports'
 import ImageComponent from '#build/ui-image-component'
 import { useAvatarGroup } from '../composables/useAvatarGroup'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UChip from './Chip.vue'
 
 defineOptions({ inheritAttrs: false })

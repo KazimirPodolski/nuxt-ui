@@ -102,7 +102,7 @@ import UContentNavigation from './ContentNavigation.vue'
 import ULink from '../Link.vue'
 import ULinkBase from '../LinkBase.vue'
 import UBadge from '../Badge.vue'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 defineOptions({ inheritAttrs: false })
 

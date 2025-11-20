@@ -43,7 +43,7 @@ import { useLocale } from '../../composables/useLocale'
 import { transformUI } from '../../utils'
 import { tv } from '../../utils/tv'
 import UCollapsible from '../Collapsible.vue'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 const props = defineProps<ProseCollapsibleProps>()
 defineSlots<ProseCollapsibleSlots>()

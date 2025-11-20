@@ -73,7 +73,7 @@ import { useRouter, useAppConfig, useNuxtApp } from '#imports'
 import { useScrollspy } from '../../composables/useScrollspy'
 import { useLocale } from '../../composables/useLocale'
 import { tv } from '../../utils/tv'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 defineOptions({ inheritAttrs: false })
 

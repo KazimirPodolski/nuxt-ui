@@ -45,7 +45,7 @@ import { pickLinkProps } from '../utils/link'
 import { tv } from '../utils/tv'
 import ULink from './Link.vue'
 import ULinkBase from './LinkBase.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 const props = withDefaults(defineProps<PageAnchorsProps<T>>(), {
   as: 'nav'

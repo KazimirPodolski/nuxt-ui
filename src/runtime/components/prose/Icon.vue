@@ -15,7 +15,7 @@ export interface ProseIconProps {
 import { computed } from 'vue'
 import { useAppConfig } from '#imports'
 import { tv } from '../../utils/tv'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 const props = defineProps<ProseIconProps>()
 

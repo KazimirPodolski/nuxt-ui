@@ -28,7 +28,7 @@ import { computed } from 'vue'
 import { useAppConfig } from '#imports'
 import { tv } from '../../utils/tv'
 import ULink from '../Link.vue'
-import UIcon from '../Icon.vue'
+import UIcon from '../Icon'
 
 defineOptions({ inheritAttrs: false })
 

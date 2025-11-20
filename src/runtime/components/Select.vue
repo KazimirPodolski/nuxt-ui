@@ -146,7 +146,7 @@ import { useFormField } from '../composables/useFormField'
 import { usePortal } from '../composables/usePortal'
 import { get, getDisplayValue, isArrayOfArray } from '../utils'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UAvatar from './Avatar.vue'
 import UChip from './Chip.vue'
 
