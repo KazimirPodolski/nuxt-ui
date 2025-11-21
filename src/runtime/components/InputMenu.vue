@@ -204,7 +204,7 @@ import { usePortal } from '../composables/usePortal'
 import { compare, get, getDisplayValue, isArrayOfArray } from '../utils'
 import { getEstimateSize } from '../utils/virtualizer'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UAvatar from './Avatar.vue'
 import UChip from './Chip.vue'
 

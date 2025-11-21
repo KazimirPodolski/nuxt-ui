@@ -63,7 +63,7 @@ import { tv } from '../utils/tv'
 import UButton from './Button.vue'
 import UTooltip from './Tooltip.vue'
 import UAvatar from './Avatar.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 
 const props = withDefaults(defineProps<ChatMessageProps>(), {
   as: 'article'

@@ -69,7 +69,7 @@ import { useAppConfig } from '#imports'
 import { tv } from '../utils/tv'
 import UPageFeature from './PageFeature.vue'
 import UContainer from './Container.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UButton from './Button.vue'
 
 const props = withDefaults(defineProps<PageSectionProps>(), {

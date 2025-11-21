@@ -47,7 +47,7 @@ import { pickLinkProps } from '../utils/link'
 import ULinkBase from './LinkBase.vue'
 import ULink from './Link.vue'
 import UAvatar from './Avatar.vue'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UKbd from './Kbd.vue'
 import UContextMenuContent from './ContextMenuContent.vue'
 

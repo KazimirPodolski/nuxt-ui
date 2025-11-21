@@ -75,7 +75,7 @@ import { Primitive } from 'reka-ui'
 import { useAppConfig } from '#imports'
 import { useLocale } from '../composables/useLocale'
 import { tv } from '../utils/tv'
-import UIcon from './Icon.vue'
+import UIcon from './Icon'
 import UAvatar from './Avatar.vue'
 import UButton from './Button.vue'
 
