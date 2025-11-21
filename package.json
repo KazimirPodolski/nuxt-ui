@@ -102,7 +102,7 @@
     "vue-plugin.d.ts"
   ],
   "scripts": {
-    "build": "nuxt-module-build build",
+    "build": "pnpm dev:prepare && nuxt-module-build build",
     "prepack": "pnpm build",
     "dev": "nuxt dev playgrounds/nuxt --uiDev",
     "dev:build": "nuxt build playgrounds/nuxt",
