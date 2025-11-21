@@ -6,7 +6,7 @@ import type { GetObjectField } from '../types/utils'
 export const fieldGroupInjectionKey: InjectionKey<ComputedRef<{
   size: FieldGroupProps['size']
   orientation: FieldGroupProps['orientation']
-}>> = Symbol('nuxt-ui.field-group')
+}> | undefined> = Symbol('nuxt-ui.field-group')
 
 type Props<T> = {
   size?: GetObjectField<T, 'size'>
