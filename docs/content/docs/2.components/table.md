@@ -561,7 +561,7 @@ class: '!p-0'
 
 ### With infinite scroll
 
-If you use server-side pagination, you can use the [`useInfiniteScroll`](https://vueuse.org/core/useInfiniteScroll/#useinfinitescroll) composable to load more data when scrolling.
+If you use server-side pagination, you can use the [`useInfiniteScroll`](https://vueuse.org/core/useInfiniteScroll/#useinfinitescroll) composable to load more data  as the user scrolls.
 
 ::component-example
 ---
@@ -596,7 +596,7 @@ class: '!p-0'
 ---
 ::
 
-### With virtualization :badge{label="4.1+"}
+### With virtualization :badge{label="4.1+" class="align-text-top"}
 
 Use the `virtualize` prop to enable virtualization for large datasets as a boolean or an object with options like `{ estimateSize: 65, overscan: 12 }`. You can also pass other [TanStack Virtual options](https://tanstack.com/virtual/latest/docs/api/virtualizer#optional-options) to customize the virtualization behavior.
 
