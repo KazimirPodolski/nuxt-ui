@@ -29,7 +29,7 @@ export interface TabsItem {
    * Also used as the Vue `key` for this item, so providing a stable value prevents tab
    * content (and its local state) from remounting when items are added, removed, or reordered.
    */
-  value?: string | number
+  value?: string | number | boolean
   disabled?: boolean
   class?: any
   ui?: Pick<Tabs['slots'], 'trigger' | 'leadingIcon' | 'leadingAvatar' | 'leadingAvatarSize' | 'label' | 'trailingBadge' | 'trailingBadgeSize' | 'content'>
