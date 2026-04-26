@@ -82,27 +82,60 @@ useHead({
   link: [
     {
       rel: 'alternate',
-      href: joinURL(site.url, 'raw', `${path.value}.md`),
+      href: `${site.url}${path.value}.md`,
       type: 'text/markdown'
     }
-  ]
+  ],
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      'headline': `${prefix}${title} ${suffix}`.trim(),
+      'description': description,
+      'url': joinURL(site.url, path.value),
+      'breadcrumb': {
+        '@type': 'BreadcrumbList',
+        'itemListElement': breadcrumb.value?.map((item, index) => ({
+          '@type': 'ListItem',
+          'position': index + 1,
+          'name': item.label,
+          'item': item.to ? joinURL(site.url, String(item.to)) : undefined
+        })) || []
+      }
+    }).replace(/</g, '\\u003c').replace(/>/g, '\\u003e')
+  }]
 })
 
-const communityLinks = computed(() => [{
+const { open, messages } = useChat()
+
+const links = computed(() => [{
   icon: 'i-lucide-file-pen',
   label: 'Edit this page',
   to: `https://github.com/nuxt/ui/edit/v4/docs/content/${page?.value?.stem}.md`,
   target: '_blank'
 }, {
-  icon: 'i-lucide-star',
-  label: 'Star on GitHub',
-  to: `https://github.com/nuxt/ui`,
-  target: '_blank'
+  icon: 'i-lucide-bot-message-square',
+  label: 'Explain with AI',
+  onClick: () => {
+    messages.value = [...messages.value, {
+      id: String(Date.now()),
+      role: 'user',
+      parts: [{ type: 'text', text: 'Read this documentation page and summarize it. I want to ask questions about it.' }]
+    }]
+    open.value = true
+  }
 }])
 </script>
 
 <template>
-  <UPage v-if="page">
+  <UPage
+    v-if="page"
+    :ui="open ? {
+      center: 'lg:col-span-10',
+      right: 'lg:hidden'
+    } : undefined"
+  >
     <UPageHeader>
       <template #headline>
         <UBreadcrumb :items="breadcrumb" />
@@ -150,11 +183,11 @@ const communityLinks = computed(() => [{
     </UPageBody>
 
     <template v-if="page?.body?.toc?.links?.length" #right>
-      <UContentToc :links="page.body.toc.links" class="z-[2]">
+      <UContentToc :links="page.body.toc.links" class="z-2">
         <template #bottom>
           <USeparator v-if="page.body?.toc?.links?.length" type="dashed" />
 
-          <UPageLinks title="Community" :links="communityLinks" />
+          <UPageLinks :links="links" />
 
           <template v-if="!isDev">
             <USeparator type="dashed" />

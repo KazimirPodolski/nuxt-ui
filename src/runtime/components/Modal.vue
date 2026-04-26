@@ -85,6 +85,7 @@ import { DialogRoot, DialogTrigger, DialogPortal, DialogOverlay, DialogContent, 
 import { reactivePick, createReusableTemplate } from '@vueuse/core'
 import { useAppConfig } from '#imports'
 import { useComponentUI } from '../composables/useComponentUI'
+import { FieldGroupReset } from '../composables/useFieldGroup'
 import { useLocale } from '../composables/useLocale'
 import { usePortal } from '../composables/usePortal'
 import { pointerDownOutside } from '../utils/overlay'
@@ -111,7 +112,7 @@ const portalProps = usePortal(toRef(() => props.portal))
 const contentProps = toRef(() => props.content)
 const contentEvents = computed(() => {
   if (!props.dismissible) {
-    const events = ['pointerDownOutside', 'interactOutside', 'escapeKeyDown']
+    const events = ['interactOutside', 'escapeKeyDown']
 
     return events.reduce((acc, curr) => {
       acc[curr] = (e: Event) => {
@@ -149,14 +150,16 @@ const ui = computed(() => tv({ extend: tv(theme), ...(appConfig.ui?.modal || {})
         @after-leave="emits('after:leave')"
         v-on="contentEvents"
       >
-        <VisuallyHidden v-if="!!slots.content && ((title || !!slots.title) || (description || !!slots.description))">
-          <DialogTitle v-if="title || !!slots.title">
+        <VisuallyHidden v-if="(!title && !slots.title) || (!description && !slots.description) || !!slots.content">
+          <DialogTitle v-if="!title && !slots.title" />
+          <DialogTitle v-else-if="!!slots.content">
             <slot name="title">
               {{ title }}
             </slot>
           </DialogTitle>
 
-          <DialogDescription v-if="description || !!slots.description">
+          <DialogDescription v-if="!description && !slots.description" />
+          <DialogDescription v-else-if="!!slots.content">
             <slot name="description">
               {{ description }}
             </slot>
@@ -166,7 +169,7 @@ const ui = computed(() => tv({ extend: tv(theme), ...(appConfig.ui?.modal || {})
         <slot name="content" :close="close">
           <div v-if="!!slots.header || (title || !!slots.title) || (description || !!slots.description) || (props.close || !!slots.close)" data-slot="header" :class="ui.header({ class: uiProp?.header })">
             <slot name="header" :close="close">
-              <div data-slot="wrapper" :class="ui.wrapper({ class: uiProp?.wrapper })">
+              <div v-if="title || !!slots.title || description || !!slots.description" data-slot="wrapper" :class="ui.wrapper({ class: uiProp?.wrapper })">
                 <DialogTitle v-if="title || !!slots.title" data-slot="title" :class="ui.title({ class: uiProp?.title })">
                   <slot name="title">
                     {{ title }}
@@ -215,17 +218,19 @@ const ui = computed(() => tv({ extend: tv(theme), ...(appConfig.ui?.modal || {})
     </DialogTrigger>
 
     <DialogPortal v-bind="portalProps">
-      <template v-if="scrollable">
-        <DialogOverlay data-slot="overlay" :class="ui.overlay({ class: uiProp?.overlay })">
+      <FieldGroupReset>
+        <template v-if="scrollable">
+          <DialogOverlay data-slot="overlay" :class="ui.overlay({ class: uiProp?.overlay })">
+            <ReuseContentTemplate />
+          </DialogOverlay>
+        </template>
+
+        <template v-else>
+          <DialogOverlay v-if="overlay" data-slot="overlay" :class="ui.overlay({ class: uiProp?.overlay })" />
+
           <ReuseContentTemplate />
-        </DialogOverlay>
-      </template>
-
-      <template v-else>
-        <DialogOverlay v-if="overlay" data-slot="overlay" :class="ui.overlay({ class: uiProp?.overlay })" />
-
-        <ReuseContentTemplate />
-      </template>
+        </template>
+      </FieldGroupReset>
     </DialogPortal>
   </DialogRoot>
 </template>
