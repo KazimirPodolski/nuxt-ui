@@ -107,7 +107,6 @@
   "scripts": {
     "build": "nuxt-module-build build",
     "prepack": "nuxt-module-build build --stub && nuxt-module-build prepare && pnpm build",
-    "postinstall": "rm .nuxt/ui.css",
     "dev": "nuxt dev playgrounds/nuxt --uiDev",
     "dev:build": "nuxt build playgrounds/nuxt",
     "dev:vue": "pnpm --filter './playgrounds/vue' dev -- --uiDev",
